@@ -9,13 +9,3 @@ module.exports = function(sequelize, DataTypes) {
     });
     return Clothing_item;
   };
-//   clothing_item {
-//     id:
-//     clean: boolean
-//     type: string
-//     primary-color: string
-//     accent-color: string
-//     pattern: solid,spot,stripe, plaid
-//     x: INT
-//     y: INT
-// }

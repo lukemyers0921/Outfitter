@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes) {
       top: DataTypes.STRING, // equal to id of clothing_item
       bottom: DataTypes.STRING,  // ^
       shoes: DataTypes.STRING, // ^
+      date: DataTypes.DATE,
     });
     return Outfit;
   };
