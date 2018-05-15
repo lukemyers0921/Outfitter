@@ -27,8 +27,9 @@ module.exports = function(app) {
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property
     db.Clothing_item.create({
-      text: req.body.text,
-      complete: req.body.complete
+      top: req.body.top,
+      bottom: req.body.bottom,
+      shoes: req.body.shoes,
     }).then(function(dbClothing_item) {
       // We have access to the new Clothing_item as an argument inside of the callback function
       res.json(dbClothing_item);
@@ -54,8 +55,9 @@ module.exports = function(app) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     db.Clothing_item.update({
-      text: req.body.text,
-      complete: req.body.complete
+      top: req.body.top,
+      bottom: req.body.bottom,
+      shoes: req.body.shoes,
     }, {
       where: {
         id: req.body.id
@@ -79,8 +81,9 @@ module.exports = function(app) {
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property
     db.Outfits.create({
-      text: req.body.text,
-      complete: req.body.complete
+      top: req.body.top,
+      bottom: req.body.bottom,
+      shoes: req.body.shoes,
     }).then(function(dbOutfits) {
       // We have access to the new Outfits as an argument inside of the callback function
       res.json(dbOutfits);
@@ -106,8 +109,9 @@ module.exports = function(app) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     db.Outfits.update({
-      text: req.body.text,
-      complete: req.body.complete
+      top: req.body.top,
+      bottom: req.body.bottom,
+      shoes: req.body.shoes,
     }, {
       where: {
         id: req.body.id
