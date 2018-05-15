@@ -3,15 +3,11 @@ module.exports = function(sequelize, DataTypes) {
       top: DataTypes.STRING, // equal to id of clothing_item
       bottom: DataTypes.STRING,  // ^
       shoes: DataTypes.STRING, // ^
-<<<<<<< Updated upstream
-      date: DataTypes.DATE,
-=======
     },{
       timestamps:true
     
->>>>>>> Stashed changes
     });
     return Outfit;
-  };
+  };``
 
-  outfit.sync();
+  // Outfit.sync();
