@@ -7,7 +7,13 @@ module.exports = function(sequelize, DataTypes) {
       timestamps:true
     
     });
-    return Outfit;
-  };``
 
-  // Outfit.sync();
+    Outfit.associate = function(models){
+      Outfit.hasMany(models.Clothing_item,{
+        onDelete: "cascade" 
+        
+      });
+    };
+    return Outfit;
+  
+  };

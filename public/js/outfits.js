@@ -1,17 +1,20 @@
 $(document).ready(function(){
 
-    var $outfits =;
+
+$(document).on("submit", "#todo-form", createOutfits)
+
+    var $outfit =;
 
 
     var outfits= [];
     
 
-    getOutfits();
+    getOutfit();
 
 
-function getOutfits(){
+function getOutfit(){
     $.get("/api/outfits", function(data){
-        outfits=data;
+        outfit=data;
 
     });
 }
@@ -27,21 +30,21 @@ function deleteOutfits(event){
 }
 
 
-function updateOutfits(outfits){
+function updateOutfit(outfit){
     $.ajax({
         method: "PUT",
         url: "/api/outfits",
-        data: outfits
-    }).then(getOutfits);
+        data: outfit
+    }).then(getOutfit);
 }
 
-function createOutfits(event){
-    var outfits ={
+function createOutfit(event){
+    var outfit ={
       top: req.body.top,
       bottom: req.body.bottom,
       shoes: req.body.shoes,
     };
-    $.post("/api/outfits" outfits, getOutfits)
+    $.post("/api/outfits", outfit, getOutfit)
 }
 
 
