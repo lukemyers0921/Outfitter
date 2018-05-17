@@ -1,0 +1,16 @@
+#indexButton {
+    margin: 10px 0px 10px 0px;
+}
+
+#indexContainer {
+   height: 550px;
+}
+
+#logo {
+    max-height: 8vh;
+    max-width: 8vh;
+}
+
+.navbar {
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
