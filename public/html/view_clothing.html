@@ -4,19 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
-    <script src = "../js/login.js"></script>
+    <script src = "../js/firebase.js"></script>
+    <script src = "../js/view_clothing.js"></script>
     <title>Document</title>
 </head>
 <body>
-    view_clothing.html
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/add_clothing">Add Clothing</a> |
-        <a href="/view_clothing">View Clothing</a>
-      </nav>
-    <button style = "display:none" id = "login">google login</button>
-    <button style = "display:none" id = "signout">signout</button>
-</body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="name">
+                <img src="./logo.png">
+            </div>  
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/add_outfits">Build</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/add_clothing">Add</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/view_clothing">View Closet</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+    
+    
+    <!-- Buttons -->
+    
+    <div class="row align-items-center">
+    
+        <div class="col align-self-center">
+    
+            <div id="top"></div>
+            <div id="bottom"></div>
+            <div id="shoes"></div>
+    
+            <div class="col-12">
+              <center>
+                    <button id="indexButton" type="button" class="btn btn-outline-primary btn-lg btn-block">Save Outfit</button>
+              </center>
+            </div>
+    
+        </div>
+    
+    </div>
+    
+    
+    </div> <!-- container -->
+    
+    </body>
+
 </html>
