@@ -23,7 +23,9 @@ module.exports = function(app) {
         user_id: req.body.user_id,
         type: req.body.type,
         img_url: req.body.img_url,
+        // include: [db.Outfit],
     }).then(function(dbClothing_item) {
+      console.log(dbClothing_item);
       // We have access to the new Clothing_item as an argument inside of the callback function
       res.json(dbClothing_item);
     });
@@ -46,11 +48,12 @@ module.exports = function(app) {
     db.Outfit.findAll({
       include: [db.Clothing_item]
     }).then(function(dbOutfit) {
+      console.log(dbOutfit);
       // We have access to the outfit as an argument inside of the callback function
       res.json(dbOutfit);
     });
   });
-  app.get("/api/outfit", function(req, res) {
+  app.get("/api/outfit/:id", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Outfit.findOne({
       where: {
@@ -73,6 +76,7 @@ module.exports = function(app) {
       bottom: req.body.bottom,
       shoes: req.body.shoes,
     }).then(function(dbOutfit) {
+      
       // We have access to the new Outfits as an argument inside of the callback function
       res.json(dbOutfit);
     });
