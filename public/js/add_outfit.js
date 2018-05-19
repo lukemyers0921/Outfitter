@@ -16,8 +16,8 @@ $(document).ready(function () {
 
     });
 
-    $("viewOutfit").click (function(){
-        var type = $("#top", "bottoms", "shoes").val();
+    $("#viewOutfit").click (function(){
+        var type = $("#top", "#bottoms", "shoes").val();
         console.log(type);
         
     })
