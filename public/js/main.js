@@ -21,6 +21,7 @@ $(document).ready(function () {
         }
     });
     $("#login").click(function () {
+        $("#login").removeClass("animated zoomIn").addClass("animated rubberBand");
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function (result) {
             // This gives you a Google Access Token. You can use it to access the Google API.
@@ -89,6 +90,7 @@ $(document).ready(function () {
         });
     });
     $("#signout").click(function () {
+        $("#signout").removeClass("animated zoomIn").addClass("animated rubberBand");
         firebase.auth().signOut().then(function () {
             console.log('Signed Out');
             userid = undefined;
