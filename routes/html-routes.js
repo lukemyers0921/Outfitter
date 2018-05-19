@@ -7,6 +7,11 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
+  // splashpage route loads splashpage.html
+  app.get("/splashpage", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/splashpage.html"));
+  });
+
   // index route loads index.html
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/index.html"));
