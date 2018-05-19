@@ -45,12 +45,11 @@ $(document).ready(function () {
     firebase.auth().onAuthStateChanged(function (user) {
 
         if (user) {
-            $("#login").hide();
-            $("#signout").show();
             userid = user;
         } else {
-            $("#signout").hide();
-            $("#login").show();
+            if(window.loaction !== "http://localhost:8080/") {
+                window.loaction = "http://localhost:8080/"
+            }
         }
     });
     $("#login").click(function () {
@@ -61,6 +60,7 @@ $(document).ready(function () {
             // The signed-in userid info.
             userid = result.user;
             console.log("Signed In")
+            window.location="/route";
         }).catch(function (error) {
             // Handle Errors here.
             if (error.code === 'auth/account-exists-with-different-credential') {
@@ -125,6 +125,7 @@ $(document).ready(function () {
         firebase.auth().signOut().then(function () {
             console.log('Signed Out');
             userid = undefined;
+            window.location="/";
         }, function (error) {
             console.error('Sign Out Error', error);
         });
