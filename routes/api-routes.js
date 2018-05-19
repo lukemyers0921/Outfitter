@@ -29,25 +29,15 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/clothing_item/:userid/:type", function(req, res) {
+  // app.get("/api/clothing_item/:userid/:type", function(req, res) {
    
-    db.Clothing_item.findAll({
-      where: {
-        user_id: req.params.userid,
-        type: req.params.type
-      }
-    }).then(function(results) {
-      res.json(results);
-    });
-  });
-
-  // app.get("/api/outfit", function(req, res) {
-  //   // findAll returns all entries for a table when used with no options
-  //   db.Outfit.findAll({
-  //     include: [db.Clothing_item]
-  //   }).then(function(dbOutfit) {
-  //     // We have access to the outfit as an argument inside of the callback function
-  //     res.json(dbOutfit);
+  //   db.Clothing_item.findAll({
+  //     where: {
+  //       user_id: req.params.userid,
+  //       type: req.params.type
+  //     }
+  //   }).then(function(results) {
+  //     res.json(results);
   //   });
   // });
   app.get("/api/outfit/:id", function(req, res) {
