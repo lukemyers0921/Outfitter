@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
     <script src="../js/firebase.js"></script>
-    <script src="../js/add_clothing.js"></script>
+    <script src="../js/view_clothing.js"></script>
     <title>Document</title>
 </head>
 
 <body>
+
     
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="name">
@@ -44,6 +43,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/view_clothing">View Closet</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="signout">Sign Out</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -52,38 +54,25 @@
 
 
         <!-- Buttons -->
-        <button style="display:none" id="login">google login</button>
-        <button style="display:none" id="signout">signout</button>
-        <div class="row align-items-center" id="indexContainer">
+
+        <div class="row align-items-center">
 
             <div class="col align-self-center">
 
+                <H1>Tops</H1>
+                <div id="top"></div>
+                <H1>Bottoms</H1>
+                <div id="bottom"></div>
+                <H1>Shoes</H1>
+                <div id="shoes"></div>
+                <H1>Accessories</H1>
+                <div id="accessories">
+                    <!-- On click display array of clicked category  -->
+                </div>
+
                 <div class="col-12">
-
-                    <form>
-                        <div class="form-group">
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                        </div>
-                    </form>
-                    <img src="" height="200" width="100" alt="Image preview" id="image">
-
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Select Item Type</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option value="top">Top</option>
-                            <option value="jacket">Jacket</option>
-                            <option value="bottom">Bottom</option>
-                            <option value="shoes">Shoes</option>
-                            <option value="bag">Bag</option>
-                            <option value="hat">Hat</option>
-                            <option value="neck">Neck</option>
-                            <option value="belt">Belt</option>
-                            <option value="wrist">Wrist</option>
-                        </select>
-                    </div>
-
                     <center>
-                        <button id="indexButton" type="button" class="btn btn-outline-primary btn-lg btn-block">Upload to Closet</button>
+                        <button id="indexButton" type="button" class="btn btn-outline-primary btn-lg btn-block">Save Outfit</button>
                     </center>
                 </div>
 
@@ -93,12 +82,15 @@
 
 
     </div>
+    <!-- container -->
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
