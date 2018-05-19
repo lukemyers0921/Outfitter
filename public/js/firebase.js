@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 var userid;
 
-var firebasePost = function (table, userid, file,type) {
+var firebasePost = function (table, userid, file,data) {
     var storageRef = firebase.storage().ref(`/${userid.uid}/${table}/${file.name}`);
     var uploadTask = storageRef.put(file);
    uploadTask.on('state_changed', function(snapshot){
@@ -33,7 +33,8 @@ var firebasePost = function (table, userid, file,type) {
     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
         var Clothing_item = {
             user_id: userid.uid,
-            type: type,
+            type: data.type,
+            name: data.type,
             img_url: downloadURL,
         };
         $.post("/api/clothing_items", Clothing_item);
@@ -131,24 +132,4 @@ $(document).ready(function () {
         });
     })
    
-    $("#get").click(function () {
-        var firebaseGet = function (table, userid, fileName,imgId) {
-            var storage = firebase.storage();
-            var storageRef = storage.ref();
-            storageRef.child(`/${userid.uid}/${table}/${fileName}`).getDownloadURL().then(function (url) {
-    
-            }).catch(function (error) {
-                // Handle any errors
-            });
-        }
-        var tableName = $("#tableName").val().trim();
-        var fileNames = $("#fileName").val().trim();
-
-        var please = firebaseGet("add_clothing",userid,"Peter Elephant .jpg","#myImg");
-        console.log(please);
-        
-        
-        
-       
-    })
 });

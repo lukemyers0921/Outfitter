@@ -10,9 +10,13 @@ $(document).ready(function () {
         });
     
     $("#indexButton").click(function () {
-       var type = $('#exampleFormControlSelect1 :selected').val();
+    var data = {
+        type:  $('#exampleFormControlSelect1 :selected').val(),
+        name: $('#name').val(),
+    }
+       var type =
        console.log(type);
-        firebasePost("add_clothing", userid, selectedFile, type);
+        firebasePost("add_clothing", userid, selectedFile, data);
 
     });
 });

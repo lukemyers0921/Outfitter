@@ -15,6 +15,7 @@ var slideshowMaker = function (type, data) {
 
     }
     showSlides(slideIndex);
+    console.log(dataArray);
 
 
 };
@@ -56,7 +57,7 @@ $(document).ready(function () {
     });
     $("#indexSubmit").click(function () {
         // route should go here
-        console.log(outfit);
+        
 
     });
 });
