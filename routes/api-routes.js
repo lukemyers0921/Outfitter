@@ -50,7 +50,7 @@ module.exports = function(app) {
       res.json(dbOutfit);
     });
   });
-  app.get("/api/outfit", function(req, res) {
+  app.get("/api/outfit/:id", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Outfit.findOne({
       where: {

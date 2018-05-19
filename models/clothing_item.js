@@ -4,5 +4,9 @@ module.exports = function (sequelize, DataTypes) {
     type: DataTypes.STRING,
     img_url: DataTypes.STRING,
   });
+  Clothing_item.associate = function(models){
+    Clothing_item.belongsTo(models.Outfit,{   
+    });
+  };
   return Clothing_item;
 };
