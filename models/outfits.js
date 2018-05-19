@@ -4,11 +4,16 @@ module.exports = function(sequelize, DataTypes) {
       bottom: DataTypes.STRING,  // ^
       shoes: DataTypes.STRING, // ^
       date: DataTypes.DATE,
+      user_id: DataTypes.STRING
     });
-    Outfit.hasMany(models.Clothing_item, {
-      foreignKey : {user_id}
-      // onDelete: "cascade"
-    });
+    Outfit.associate = function(models){
+      
+      Outfit.hasMany(models.Clothing_item, {
+        
+        foreignKey : {allowNull: false},
+        onDelete: "cascade"
+      });
+  };
  
     return Outfit;
   };

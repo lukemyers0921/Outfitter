@@ -41,20 +41,20 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/outfit", function(req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Outfit.findAll({
-      include: [db.Clothing_item]
-    }).then(function(dbOutfit) {
-      // We have access to the outfit as an argument inside of the callback function
-      res.json(dbOutfit);
-    });
-  });
+  // app.get("/api/outfit", function(req, res) {
+  //   // findAll returns all entries for a table when used with no options
+  //   db.Outfit.findAll({
+  //     include: [db.Clothing_item]
+  //   }).then(function(dbOutfit) {
+  //     // We have access to the outfit as an argument inside of the callback function
+  //     res.json(dbOutfit);
+  //   });
+  // });
   app.get("/api/outfit/:id", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.Outfit.findOne({
+    db.Outfit.findAll({
       where: {
-        user_id: req.params.user_id
+        user_id: req.params.id
       },
       include: [db.Clothing_item]
     }).then(function(dbOutfit) {
@@ -63,12 +63,12 @@ module.exports = function(app) {
     });
   });
   // POST route for saving a new Outfits
-  app.post("/api/outfit", function(req, res) {
+  app.post("/api/outfit/:id", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property
     db.Outfit.create({
-      user_id: req.body.user_id,
+      user_id: req.body.id,
       top: req.body.top,
       bottom: req.body.bottom,
       shoes: req.body.shoes,
@@ -79,33 +79,33 @@ module.exports = function(app) {
   });
   // DELETE route for deleting outfit. We can get the id of the Outfits to be deleted from
   // req.params.id
-  app.delete("/api/outfit/:id", function(req, res) {
-    // We just have to specify which Outfits we want to destroy with "where"
-    db.Outfit.destroy({
-      where: {
-        useri_d: req.params.user_id
-      },
-      include:[db.Clothing_item]
-    }).then(function(dbOutfit) {
-      res.json(dbOutfit);
-    });
-  });
-  // PUT route for updating outfit. We can get the updated Outfits data from req.body
-  app.put("/api/outfit", function(req, res) {
-    // Update takes in an object describing the properties we want to update, and
-    // we use where to describe which objects we want to update
-    db.Outfit.update({
-      top: req.body.top,
-      bottom: req.body.bottom,
-      shoes: req.body.shoes,
-    }, {
-      where: {
-        user_id: req.params.user_id
-      },
-      include: [db.Clothing_item]
-    }).then(function(dbOutfit) {
-      res.json(dbOutfit);
-    });
-  });
+  // app.delete("/api/outfit/:id", function(req, res) {
+  //   // We just have to specify which Outfits we want to destroy with "where"
+  //   db.Outfit.destroy({
+  //     where: {
+  //       user_id: req.params.user_id
+  //     },
+  //     include:[db.Clothing_item]
+  //   }).then(function(dbOutfit) {
+  //     res.json(dbOutfit);
+  //   });
+  // });
+  // // PUT route for updating outfit. We can get the updated Outfits data from req.body
+  // app.put("/api/outfit", function(req, res) {
+  //   // Update takes in an object describing the properties we want to update, and
+  //   // we use where to describe which objects we want to update
+  //   db.Outfit.update({
+  //     top: req.body.top,
+  //     bottom: req.body.bottom,
+  //     shoes: req.body.shoes,
+  //   }, {
+  //     where: {
+  //       user_id: req.params.user_id
+  //     },
+  //     include: [db.Clothing_item]
+  //   }).then(function(dbOutfit) {
+  //     res.json(dbOutfit);
+  //   });
+  // });
 };
 
