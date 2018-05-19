@@ -4,8 +4,13 @@
     "password": "root",
     "database": "outfitter_db",
     "host": "localhost",
+<<<<<<< HEAD
     "dialect": "mysql",
     "port": 8889
+=======
+    "port": 8889,
+    "dialect": "mysql"
+>>>>>>> 94875109176afca4407f10db0cf08810ca085805
   },
   "test": {
     "username": "root",
