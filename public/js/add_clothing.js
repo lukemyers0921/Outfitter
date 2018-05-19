@@ -15,4 +15,7 @@ $(document).ready(function () {
         firebasePost("add_clothing", userid, selectedFile, type);
 
     });
+
+
 });
+
