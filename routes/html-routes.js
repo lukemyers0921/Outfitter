@@ -9,9 +9,11 @@ module.exports = function(app) {
 
   // index route loads index.html
   app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/splashpage.html"));
+  });
+  app.get("/index", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/index.html"));
   });
-
   // add_clothing route loads the add_clothing.html page, allowes users to add clothes to database
   app.get("/add_clothing", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/add_clothing.html"));
