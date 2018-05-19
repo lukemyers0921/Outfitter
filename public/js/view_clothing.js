@@ -5,7 +5,7 @@ var slideshowMaker = function (type, data) {
         dataArray.push(data[i]);
         var slide = `<div class="mySlides" >
         <div class="numbertext">${i+1} / ${data.length}</div>
-        <img src="${data[i].img_url}" height="300" width="200"><br>
+        <img src="${data[i].img_url}" height="300" width="300"><br>
         <div class="text"><p>Name</p>
         <div><button class = "btn btn-danger delete">Delete</button><button class = "btn btn-success add" id = "${type}${i}">Add to outfit</button></div>
         </div><br>
