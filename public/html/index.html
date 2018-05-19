@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+    <script src="../js/firebase.js"></script>
+    <title>Document</title>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="name">
-        <img src="../images/logo.png" id="logo">
-      </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Build</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Add</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">View Closet</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" id="signout">Sign Out</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="name">
+      <img src="../images/navLogo.png" id="logo">
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./view_clothing">View Clothing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./add_clothing">Add Clothing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./view_outfits">View Outfits</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="signout">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
     <div class="container">
 
@@ -57,19 +60,19 @@
 
         <div class="col-12">
           <center>
-            <button id="indexButton" type="button" class="btn btn-outline-primary btn-lg btn-block">Build an Outift</button>
+            <a href="./view_clothing"><button id="indexButton" type="button" class="btn btn-outline-primary btn-lg btn-block">View Clothing</button></a>
           </center>
         </div>
 
         <div class="col-12">
           <center>
-            <button id="indexButton" type="button" class="btn btn-outline-primary btn-lg btn-block">Add Clothing</button>
+            <a href="./add_clothing"><button id="indexButton" type="button" class="btn btn-outline-primary btn-lg btn-block">Add Clothing</button></a>
           </center>
         </div>
 
         <div class="col-12">
           <center>
-            <button id="indexButton" type="button" class="btn btn-outline-primary btn-lg btn-block">View Outfits</button>
+            <a href="./view_outfits"><button id="indexButton" type="button" class="btn btn-outline-primary btn-lg btn-block">View Outfits</button></a>
           </center>
         </div>
 
