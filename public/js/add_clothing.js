@@ -10,13 +10,12 @@ $(document).ready(function () {
     });
 
     $("#indexButton").click(function () {
-        console.log($('#name').val())
-        var data = {
-            type: $('#exampleFormControlSelect1 :selected').val(),
-            name: $('#name').val(),
-        }
-        var type =
-            console.log(type);
+    var data = {
+        type:  $('#exampleFormControlSelect1 :selected').val(),
+        name: $('#name').val(),
+    }
+       var type =
+       console.log(type);
         firebasePost("add_clothing", userid, selectedFile, data);
 
     });

@@ -16,6 +16,7 @@ var slideshowMaker = function (type, data) {
 
     }
     showSlides(slideIndex);
+    console.log(dataArray);
 
 };
 var getByType = function (type) {
