@@ -23,7 +23,9 @@ module.exports = function(app) {
         user_id: req.body.user_id,
         type: req.body.type,
         img_url: req.body.img_url,
+        // include: [db.Outfit],
     }).then(function(dbClothing_item) {
+      console.log(dbClothing_item);
       // We have access to the new Clothing_item as an argument inside of the callback function
       res.json(dbClothing_item);
     });

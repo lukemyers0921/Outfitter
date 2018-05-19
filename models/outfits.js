@@ -3,6 +3,9 @@ module.exports = function(sequelize, DataTypes) {
       top: DataTypes.STRING, // equal to id of clothing_item
       bottom: DataTypes.STRING,  // ^
       shoes: DataTypes.STRING, // ^
+    },{
+      timestamps:true
+    
       date: DataTypes.DATE,
       user_id: DataTypes.STRING
     });
@@ -15,5 +18,13 @@ module.exports = function(sequelize, DataTypes) {
       });
   };
  
+
+    Outfit.associate = function(models){
+      Outfit.hasMany(models.Clothing_item,{
+        onDelete: "cascade" 
+        
+      });
+    };
     return Outfit;
+  
   };
