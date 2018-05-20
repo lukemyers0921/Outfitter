@@ -34,25 +34,29 @@ var firebasePost = function (table, userid, file,data) {
         var Clothing_item = {
             user_id: userid.uid,
             type: data.type,
-            name: data.type,
+            name: data.name,
             img_url: downloadURL,
         };
         $.post("/api/clothing_items", Clothing_item);
     });
   });
 }
+firebase.auth().onAuthStateChanged(function (user) {
 
-$(document).ready(function () {
-    firebase.auth().onAuthStateChanged(function (user) {
-
-        if (user) {
-            userid = user;
-        } else {
-            if(window.loaction !== "http://localhost:8080/") {
-                window.loaction = "http://localhost:8080/"
-            }
+    if (user) {
+        userid = user;
+        console.log("welcome")
+    }
+    if(user == undefined) {
+        console.log("hello")
+        if(window.location != "http://localhost:8080/") {
+            console.log("goodbye")
+            window.location = "/"
         }
-    });
+    }
+});
+$(document).ready(function () {
+   
     $("#login").click(function () {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function (result) {
