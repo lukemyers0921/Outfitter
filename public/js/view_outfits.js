@@ -14,7 +14,7 @@ var outfitGenerator = function (outfit) {
             <img src = "${outfit.bottom.img_url}" height = "210" width = "167" class = "bottom"> 
         </div> 
     <div class = "row"> 
-    <div class = "col-12"><h1>${outfit.name}</h1></div> 
+    <div class = "col-12"><h2 style="margin:auto">${outfit.name}</h2></div> 
     </div> 
     </div> 
   ` 
@@ -58,8 +58,7 @@ var outfitMaker = function (name, topId, bottomId, shoesId, hatId, bagId, jacket
         }), 
  
     ).then(function () { 
-        outfitGenerator(outfit) 
-        console.log(outfit) 
+        outfitGenerator(outfit)
     }); 
 } 
 var getOutfits = function () { 
