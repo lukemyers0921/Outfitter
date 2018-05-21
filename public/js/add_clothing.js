@@ -3,9 +3,9 @@ $(document).ready(function () {
 
     document.querySelector('input[type="file"]').addEventListener('change', function () {
         if (this.files && this.files[0]) {
-            var img = document.querySelector('#image');
+            // var img = document.querySelector('#image');
             selectedFile = event.target.files[0];
-            img.src = URL.createObjectURL(this.files[0]);
+            // img.src = URL.createObjectURL(this.files[0]);
         }
     });
 

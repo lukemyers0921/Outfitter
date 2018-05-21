@@ -32,6 +32,7 @@ var outfitPlacer = function (id) {
     key = dataArray[i];
     console.log(key.img_url)
     $(`.${type}`).attr("src", `${key.img_url}`);
+    outfit[type].id = key.id
 }
 var outfitGenerator = function (outfit) {
     var literal = `<div class="row" class="outfit">
